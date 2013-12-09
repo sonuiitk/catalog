@@ -1,0 +1,73 @@
+<h1>Details</h1>
+<table>
+  <tr>
+    <td>
+      Name:
+    </td>
+    <td>
+      <%= @product.group.name %>
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Category:
+    </td>
+    <td>
+      <%= @product.group.category %>
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Sub category:
+    </td>
+    <td>
+      <%= @product.group.sub_category %>
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Price:
+    </td>
+    <td>
+      <%= @product.price %>
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Shipping days:
+    </td>
+    <td>
+      <%= @product.shipping %>
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Store:
+    </td>
+    <td>
+      <%= @product.group.store %>
+    </td>
+  </tr>
+</table>
+
+<% if(@products.size > 1) %>
+  <h1>More products</h1>
+  <table>
+    <% for x in @products %>
+      <% if(x.id != @product.id) %>
+        <tr>
+          <td>
+            <a href="<%= product_url(:id => x.id) %>"><%= x.group.name %></a>
+          </td>
+        </tr>
+      <% end %>
+    <% end %>
+  </table>
+<% else %>
+  <h1>No more products in this category</h1>
+<% end %>
