@@ -35,5 +35,14 @@ CREATE TABLE `groups` (
 
 5) Once the server is started, open your browser and open the URL 'localhost:3000'
 
+------------------------DESIGN---------------------
+Assumptions:
+1) The category, sub-category, name and store for different products of a group are same.
+
+It has two tables, groups and products
+Group table contains the data as group_id, name, store, category, sub-catgory
+Product table contains price, and shippind days
+
+Each group can have multiple products
 
 
